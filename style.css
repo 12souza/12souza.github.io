@@ -1,0 +1,258 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Change to flex-start so it doesn't try to center everything */
+  height: 100%;
+  background-color: #f4f4f9;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: auto; /* Allow vertical scrolling */
+}
+
+#app-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1200px;
+  height: 100%;
+  border: 2px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+#routine-panel {
+  flex: 1 1 200px;
+  background-color: #eee;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#routine-panel h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#routine-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+#routine-list li {
+  font-size: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  text-align: center;
+  border: 2px solid rgb(0, 0, 0) !important;
+}
+
+#main-panel {
+  flex: 2 1 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 90px;
+}
+
+#controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  max-height: 600px;
+  background-color: black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#video-player {
+  width: 100%;
+  border: none;
+  display: block;
+}
+
+#timer {
+  font-size: 120px !important;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.highlight {
+  background-color: yellow !important;
+  font-weight: bold;
+  border: 2px solid rgb(0, 0, 0) !important;
+}
+
+#time-settings {
+  margin: 20px 0;
+}
+
+#time-settings input,
+#time-settings button {
+  margin-left: 10px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+/* Layout adjustments for smaller screens */
+@media (max-width: 768px) {
+  #app-container {
+    flex-direction: column;  /* Stack the panels on top of each other */
+    height: auto;
+  }
+
+  #routine-panel {
+    flex: none;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  #main-panel {
+    flex: none;
+    width: 100%;
+    padding: 20px;
+  }
+
+  #timer {
+    font-size: 80px;
+    margin-top: 15px;
+  }
+
+  #gif-container {
+    max-width: 100%;
+    max-height: 400px;
+  }
+
+  #controls,
+  #time-settings {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Further adjustments for very small screens (like mobile phones) */
+@media (max-width: 480px) {
+  #routine-panel {
+    padding: 10px;
+  }
+
+  #routine-list li {
+    width: 87%;
+  }
+
+  #timer {
+    font-size: 60px !important;
+    margin-top: 10px;
+  }
+
+  #video-container {
+    max-width: 100%;
+    max-height: 400px;
+  }
+}
+
+#gif-container {
+  position: relative;
+  width: 70%;
+  max-width: 800px;
+  max-height: 450px;
+  background-color: black;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #333;
+}
+
+#gif-player {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures the entire GIF is shown within the container */
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  #app-container {
+    flex-direction: column;
+    width: 100%;
+    overflow-y: scroll; /* Enable scrolling */
+  }
+
+  #routine-panel {
+    flex: none;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  #main-panel {
+    flex: none;
+    width: 100%;
+    padding: 20px;
+  }
+
+  #timer {
+    font-size: 80px;
+    margin-top: 15px;
+  }
+
+  #gif-container {
+    max-width: 100%;
+    max-height: 400px;
+  }
+
+  #controls,
+  #time-settings {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-height: 480px) {
+  #app-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #routine-panel {
+    flex: 1 1 150px;
+    padding: 5px;
+  }
+
+  #main-panel {
+    flex: 2 1 300px;
+    padding: 5px;
+  }
+
+  #gif-container {
+    max-width: 70%;
+    max-height: 250px;
+  }
+
+  #timer {
+    font-size: 40px;
+  }
+}
