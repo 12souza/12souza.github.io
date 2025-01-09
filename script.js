@@ -27,7 +27,7 @@ let timerInterval = null;
 let setTime = 30; // default station time
 
 // Populate the workout dropdown menu with the exercises
-function populateDropdown() {
+/*function populateDropdown() {
   const workoutDropdown = document.getElementById("workout-dropdown");
   console.log("Populating dropdown..."); // Debugging log
 
@@ -41,6 +41,30 @@ function populateDropdown() {
 
   // Add all workout options to the dropdown
   Object.keys(workouts).forEach((exercise) => {
+    const option = document.createElement("option");
+    option.text = exercise;
+    option.value = exercise;
+    workoutDropdown.appendChild(option);
+  });
+
+  console.log("Dropdown populated:", workoutDropdown); // Debugging log
+}*/
+
+function populateDropdown() {
+  const workoutDropdown = document.getElementById("workout-dropdown");
+  console.log("Populating dropdown..."); // Debugging log
+
+  workoutDropdown.innerHTML = ""; // Clear existing options
+
+  // Create and append a default "select" option
+  const defaultOption = document.createElement("option");
+  defaultOption.text = "Select a workout";
+  defaultOption.value = "";
+  workoutDropdown.appendChild(defaultOption);
+
+  // Sort workouts alphabetically and add all workout options to the dropdown
+  const sortedWorkouts = Object.keys(workouts).sort();
+  sortedWorkouts.forEach((exercise) => {
     const option = document.createElement("option");
     option.text = exercise;
     option.value = exercise;
