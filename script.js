@@ -76,7 +76,7 @@ function populateDropdown() {
 }
 
 // Handle adding workouts to routine
-document.getElementById("add-workout").addEventListener("click", () => {
+/*document.getElementById("add-workout").addEventListener("click", () => {
   const workoutDropdown = document.getElementById("workout-dropdown");
   const selectedWorkout = workoutDropdown.value;
 
@@ -85,6 +85,19 @@ document.getElementById("add-workout").addEventListener("click", () => {
     updateWorkoutList();
   } else if (!selectedWorkout) {
     alert("Please select a workout from the dropdown.");
+  }
+});*/
+document.getElementById("add-workout").addEventListener("click", () => {
+  const workoutDropdown = document.getElementById("workout-dropdown");
+  const selectedWorkout = workoutDropdown.value;
+
+  if (selectedWorkout === "DB Choice" || (selectedWorkout && !routine.includes(selectedWorkout))) {
+    routine.push(selectedWorkout);
+    updateWorkoutList();
+  } else if (!selectedWorkout) {
+    alert("Please select a workout from the dropdown.");
+  } else {
+    alert("This workout is already in your routine.");
   }
 });
 
