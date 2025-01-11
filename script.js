@@ -18,6 +18,7 @@ let workouts = {
   "DB Pullover": "pullover.gif",
   "DB Shoulder Press": "shoulderpress.gif",
   "DB Thruster Squat": "thruster.gif",
+  "DB Choice": "choice.gif",
   "DB Bent Over Rows": "standingsrows.gif"
 };
 
